@@ -9,6 +9,10 @@
   --blue: #1a73e8;
   --blue-dark: #0d47a1;
   --blue-light: #4fc3f7;
+}
+
+/* DARK MODE */
+.dark-mode {
   --black: #0a0a0a;
   --dark: #111827;
   --dark2: #1a1f2e;
@@ -16,6 +20,23 @@
   --text-muted: #9ca3af;
   --card-bg: #141a26;
   --border: #1e2d45;
+  --nav-bg: rgba(10, 10, 10, 0.95);
+  --hero-h1: #ffffff;
+  --footer-bg: #1a1f2e;
+}
+
+/* LIGHT MODE */
+.light-mode {
+  --black: #f0f4f8;
+  --dark: #e2e8f0;
+  --dark2: #dde4ed;
+  --text: #1a202c;
+  --text-muted: #4a5568;
+  --card-bg: #ffffff;
+  --border: #b0c4de;
+  --nav-bg: rgba(255, 255, 255, 0.97);
+  --hero-h1: #0d2a5e;
+  --footer-bg: #dde4ed;
 }
 
 body {
@@ -23,6 +44,7 @@ body {
   background-color: var(--black);
   color: var(--text);
   line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* ---- NAVBAR ---- */
@@ -31,7 +53,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 6%;
-  background: rgba(10, 10, 10, 0.95);
+  background: var(--nav-bg);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -41,7 +63,7 @@ nav {
 .logo {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--hero-h1);
 }
 
 .logo span {
@@ -63,6 +85,33 @@ nav ul a {
 
 nav ul a:hover {
   color: var(--blue-light);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+#theme-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+#theme-toggle i {
+  color: var(--blue);
+  font-size: 1rem;
 }
 
 /* ---- HERO ---- */
@@ -91,7 +140,7 @@ nav ul a:hover {
 .hero-content h1 {
   font-size: 3rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--hero-h1);
   line-height: 1.1;
   margin-bottom: 0.5rem;
 }
@@ -192,7 +241,7 @@ section:nth-child(even) {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2.5rem;
-  color: #fff;
+  color: var(--hero-h1);
   text-align: center;
 }
 
@@ -308,7 +357,7 @@ section:nth-child(even) {
 
 .project-card h3 {
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--hero-h1);
   margin-bottom: 0.75rem;
 }
 
@@ -367,7 +416,7 @@ section:nth-child(even) {
 }
 
 .contact-card h4 {
-  color: #fff;
+  color: var(--hero-h1);
   margin-bottom: 0.4rem;
 }
 
@@ -437,7 +486,7 @@ section:nth-child(even) {
 }
 
 .timeline-header h3 {
-  color: #fff;
+  color: var(--hero-h1);
   font-size: 1.1rem;
 }
 
@@ -525,7 +574,7 @@ section:nth-child(even) {
 
 .cert-card h3 {
   font-size: 0.9rem;
-  color: #fff;
+  color: var(--hero-h1);
   margin-bottom: 0.6rem;
   line-height: 1.4;
 }
@@ -543,7 +592,7 @@ section:nth-child(even) {
 footer {
   text-align: center;
   padding: 2rem;
-  background: var(--dark2);
+  background: var(--footer-bg);
   color: var(--text-muted);
   font-size: 0.85rem;
   border-top: 1px solid var(--border);
